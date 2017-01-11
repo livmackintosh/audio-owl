@@ -13,48 +13,27 @@ from mpd import MPDClient
 
 """ Main Window """
 class OwlyWindow(Gtk.Window):
-    
+  
     def __init__ (self):
         # Initialize the OwlyWindow
-        Gtk.Window.__init__(self, title="Audio-Owl Dev")
-        self.set_border_width(10) 
-        Gtk.Orientation
-
-        # Create a box to pack our widgets
-        self.box = Gtk.Box(spacing=6)
-        self.box.set_orientation(Gtk.Orientation.VERTICAL)
-        self.add(self.box)
-
-        # Create the current file label
-        self.current_file=Gtk.Label()
-        self.box.pack_start(self.current_file, True, True, 0)
-
-        # Create the file-picker and event handler
-        self.choose_audio_btn=Gtk.Button(label="Load Audio")
-        self.choose_audio_btn.connect("clicked", self.choose_audio)
-        self.box.pack_start(self.choose_audio_btn, True, True, 0)
-
-        # Create the play button and event handler
-        self.play_audio_btn=Gtk.Button(label="Play Audio")
-        self.play_audio_btn.connect("clicked", self.play_audio)
-        self.box.pack_start(self.play_audio_btn, True, True, 0)
-
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file("owlywindow.glade")
+        self.builder.connect_signals(self)
 
     def choose_audio(self, widget):
         """Opens a load file chooser dialog"""
-        dialog = Gtk.FileChooserDialog("Pick an audio file", self, 
-            Gtk.FileChooserAction.OPEN, 
-            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
-
-        self.add_file_filters(dialog)
         
+        print("Handler Executed")
+        
+        dialog = self.builder.get_object("song_picker_dlg")
         response = dialog.run()
+
         if response == Gtk.ResponseType.OK:
             print("File open successful")
         elif response == Gtk.ResponseType.CANCEL:
             print("File open cancelled")
-        self.current_file.set_text(dialog.get_filename())
+        
+        widget.set_text(dialog.get_filename())
         dialog.destroy()
 
     def add_file_filters(self, dialog):
@@ -72,8 +51,9 @@ class OwlyWindow(Gtk.Window):
         self.mpd_client.clear()
         self.mpd_client.add(self.current_file.get_text())
         self.mpd_client.play(0)
-        
-win = OwlyWindow()
+
+ow = OwlyWindow()
+win = ow.builder.get_object("owly_window")
 win.connect("delete-event", Gtk.main_quit)
 win.show_all()
 Gtk.main()
