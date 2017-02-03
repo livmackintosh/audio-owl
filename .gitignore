@@ -1,5 +1,3 @@
-# Created by https://www.gitignore.io/api/python
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -93,5 +91,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# End of https://www.gitignore.io/api/python
+# Glade
+*.glade~
 
+# Editor Swapfiles
+*.swp
