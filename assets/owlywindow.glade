@@ -41,6 +41,8 @@
       <mime-type>audio/ogg</mime-type>
       <mime-type>audio/mp3</mime-type>
       <mime-type>audio/flac</mime-type>
+      <mime-type>audio/opus</mime-type>
+      <mime-type>audio/aac</mime-type>
     </mime-types>
   </object>
   <object class="GtkWindow" id="main_window">
