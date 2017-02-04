@@ -14,8 +14,8 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg4716"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="snoozyowl2.svg">
+   inkscape:version="0.92.0 r"
+   sodipodi:docname="snoozyowl3.svg">
   <defs
      id="defs4718" />
   <sodipodi:namedview
@@ -27,9 +27,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="277.4224"
-     inkscape:cy="520"
+     inkscape:cy="586.47215"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="772"
@@ -53,21 +53,21 @@
      id="layer2"
      inkscape:label="Layer 2">
     <ellipse
-       style="fill:#501616"
+       style="fill:#361d1d;fill-opacity:1"
        id="path5325"
        cx="453.5585"
        cy="616.98645"
        rx="61.619305"
        ry="134.35028" />
     <ellipse
-       style="fill:#501616"
+       style="fill:#361d1d;fill-opacity:1"
        id="path5325-7"
        cx="238.396"
        cy="609.91541"
        rx="61.619305"
        ry="134.35028" />
     <ellipse
-       style="fill:#aa4400"
+       style="fill:#683109;fill-opacity:1"
        id="path5285"
        cx="347.49249"
        cy="617.99658"
@@ -79,22 +79,34 @@
      id="layer3"
      inkscape:label="Layer 3" />
   <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Headphones Strap">
+    <ellipse
+       style="opacity:1;fill:#484848;fill-opacity:1;stroke-width:0.84862304"
+       id="path4630"
+       cx="354.12622"
+       cy="378.26163"
+       rx="124.55357"
+       ry="102.45535" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <ellipse
-       style="fill:#aa4400"
+       style="fill:#683109;fill-opacity:1"
        id="path5283"
-       cx="352.54324"
-       cy="416.97626"
+       cx="354.43726"
+       cy="415.08224"
        rx="124.24876"
        ry="118.18785" />
     <ellipse
-       style="fill:#e9c6af"
+       style="fill:#dabfc1;fill-opacity:1;stroke-width:1.00908136"
        id="path5287"
-       cx="346.50262"
+       cx="345.83298"
        cy="670.52454"
-       rx="110.10663"
+       rx="112.11555"
        ry="139.40105" />
     <circle
        style="fill:#ffffff"
@@ -111,7 +123,7 @@
     <ellipse
        style="fill:#241c1c"
        id="path5308"
-       cx="314.17847"
+       cx="312.30347"
        cy="419.95593"
        rx="13.131983"
        ry="15.152288" />
@@ -129,16 +141,35 @@
        sodipodi:sides="5"
        sodipodi:cx="349.51279"
        sodipodi:cy="474.55496"
-       sodipodi:r1="72.983086"
+       sodipodi:r1="67.012939"
        sodipodi:r2="57.049717"
-       sodipodi:arg1="1.6539376"
-       sodipodi:arg2="2.4786711"
+       sodipodi:arg1="1.5980941"
+       sodipodi:arg2="2.4228276"
        inkscape:flatsided="false"
        inkscape:rounded="0"
        inkscape:randomized="0"
-       d="m 343.45187,547.28595 -38.90553,-37.62132 -26.07776,-18.39883 23.75753,-48.62699 9.43986,-30.48697 53.5885,7.56819 31.9119,-0.44315 9.36198,53.30438 10.28279,30.21309 -47.80248,25.37573 z"
+       d="m 347.68371,541.54294 -41.10765,-29.42326 -21.33784,-18.60385 15.28022,-48.18799 11.09956,-26.04239 50.55134,-0.35855 28.19774,2.50876 15.96223,47.96639 6.32761,27.59289 -40.68615,30.00341 z"
        inkscape:transform-center-x="-1.593619"
-       inkscape:transform-center-y="-1.4412736"
-       transform="matrix(0.4475672,0,0,0.32979835,199.36384,305.81513)" />
+       inkscape:transform-center-y="-9.0174177"
+       transform="matrix(0.4475672,0,0,0.32979835,199.36384,302.06513)" />
+    <ellipse
+       style="opacity:1;fill:#f1b8ff;fill-opacity:1;stroke-width:0.35433072;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path4593-5-5"
+       cx="230.79701"
+       cy="393.58798"
+       rx="30.803572"
+       ry="55.580364" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Headphones">
+    <ellipse
+       style="opacity:1;fill:#b178ff;fill-opacity:1;stroke-width:1.15593016"
+       id="path4593-5"
+       ry="53.571438"
+       rx="30.13393"
+       cy="396.93619"
+       cx="476.67087" />
   </g>
 </svg>
