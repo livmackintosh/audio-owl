@@ -91,10 +91,12 @@ class OwlyWindow(Gtk.ApplicationWindow):
         self.builder().get_object("about_dialog").run()
 
     def ramp_up(self, t_milli):
+        """Raises the volume from 0% to 100% over the FADE_PERIOD"""
         return ((math.sin((t_milli * math.pi) / (self.FADE_PERIOD*1000)
                 - math.pi/2)+1)/2)
 
     def ramp_down(self, t_milli):
+        """Lowers the volume from 100% to 0% over the FADE_PERIOD"""
         return ((math.sin((t_milli * math.pi) / (self.FADE_PERIOD*1000)
                 + math.pi/2)+1)/2)
 
@@ -133,6 +135,10 @@ class OwlyWindow(Gtk.ApplicationWindow):
                     int(self.ramp_down(self.player.get_time())*100))
 
     def quit(self, widget):
+        """Quit Audio-Owl
+        
+        Stop the audio, kill the threads and kill Gtk.main()
+        """
         self.player.stop()
         self.executor.shutdown()
         Gtk.main_quit()
