@@ -59,7 +59,7 @@
     <property name="default_height">400</property>
     <property name="type_hint">dialog</property>
     <property name="gravity">center</property>
-    <signal name="destroy-event" handler="quit" swapped="no"/>
+    <signal name="destroy" handler="quit" swapped="no"/>
     <child>
       <object class="GtkBox" id="main_window_internal">
         <property name="visible">True</property>
