@@ -138,7 +138,7 @@ class OwlyWindow(Gtk.ApplicationWindow):
                 self.player.audio_set_volume(
                     int(self.ramp_down(self.player.get_time())*100))
 
-    def quit(self, widget):
+    def quit(self, *args, **kwargs):
         """Quit Audio-Owl
         
         Stop the audio, kill the threads and kill Gtk.main()
