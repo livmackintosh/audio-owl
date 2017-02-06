@@ -6,11 +6,12 @@
     <property name="can_focus">False</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">Audio-Owl</property>
-    <property name="version">Version 0.0.1</property>
+    <property name="version">Pre-Release</property>
     <property name="copyright" translatable="yes">Copyright (c) 2017 Olivia Mackintosh</property>
     <property name="authors">Olivia Mackintosh</property>
     <property name="artists">KawaiiPunk</property>
     <property name="logo">../assets/logo.png</property>
+    <property name="license_type">gpl-3-0-only</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="about_dialog_internal">
         <property name="can_focus">False</property>
@@ -61,6 +62,7 @@
           <object class="GtkButtonBox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
             <property name="layout_style">expand</property>
             <child>
               <object class="GtkButton" id="load_song_btn">
@@ -73,7 +75,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
@@ -202,6 +204,7 @@
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="song_picker_actions">
             <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="song_picker_cancel_btn">
