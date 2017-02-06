@@ -79,8 +79,12 @@ class OwlyWindow(Gtk.ApplicationWindow):
             self.start_stop_btn.set_label("Stop Playing")
             # Set current media from label contents
             self.player.set_media(vlc.Media(self.filename))
+            # Set FADE_PERIOD based on spinner value
+            self.FADE_PERIOD = self.main.get_object(
+                    'fade_period_spinbtn').get_value_as_int()
             # Make sure volume is 0% and start playing
             self.player.audio_set_volume(0)
+            sleep(0.5)
             self.player.play()
             sleep(0.5) # Avoid some weird race condition
             self.sr = self.executor.submit(self.sleep_routine)

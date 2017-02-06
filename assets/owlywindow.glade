@@ -46,6 +46,12 @@
       <mime-type>audio/aac</mime-type>
     </mime-types>
   </object>
+  <object class="GtkAdjustment" id="fade_period">
+    <property name="upper">120</property>
+    <property name="value">30</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkWindow" id="main_window">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
@@ -53,11 +59,68 @@
     <property name="default_height">400</property>
     <property name="type_hint">dialog</property>
     <property name="gravity">center</property>
+    <signal name="destroy-event" handler="quit" swapped="no"/>
     <child>
       <object class="GtkBox" id="main_window_internal">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkProgressBar" id="progress_bar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">center</property>
+            <property name="margin_top">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="pulse_step">0.01</property>
+            <property name="text" translatable="yes">Time Remaining</property>
+            <property name="show_text">True</property>
+            <property name="ellipsize">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="current_song">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkLabel" id="current_song_title_lbl">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Current Song: 
+</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="current_song_content_lbl">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">No file selected</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
         <child>
           <object class="GtkButtonBox">
             <property name="visible">True</property>
@@ -97,20 +160,20 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="pack_type">end</property>
-            <property name="position">0</property>
+            <property name="position">2</property>
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="current_song">
+          <object class="GtkBox" id="fade_period_spinner_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkLabel" id="current_song_title_lbl">
+              <object class="GtkLabel" id="fade_period_spinbtn_lbl">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Current Song: 
-</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Fade Period</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -119,41 +182,30 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="current_song_content_lbl">
+              <object class="GtkSpinButton" id="fade_period_spinbtn">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">No file selected</property>
+                <property name="can_focus">True</property>
+                <property name="max_length">120</property>
+                <property name="width_chars">3</property>
+                <property name="max_width_chars">3</property>
+                <property name="primary_icon_tooltip_text" translatable="yes">Sets the length of time in seconds that the song should fade in/out.</property>
+                <property name="placeholder_text" translatable="yes">30</property>
+                <property name="input_purpose">phone</property>
+                <property name="adjustment">fade_period</property>
+                <property name="climb_rate">1</property>
+                <property name="snap_to_ticks">True</property>
+                <property name="numeric">True</property>
               </object>
               <packing>
-                <property name="expand">True</property>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkProgressBar" id="progress_bar">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="valign">center</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
-            <property name="pulse_step">0.01</property>
-            <property name="text" translatable="yes">Time Remaining</property>
-            <property name="show_text">True</property>
-            <property name="ellipsize">end</property>
-          </object>
-          <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="padding">5</property>
             <property name="position">3</property>
           </packing>
         </child>
@@ -164,27 +216,16 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="title">Audio-Owl</property>
+        <property name="show_close_button">True</property>
         <child>
           <object class="GtkButton" id="about_btn">
             <property name="label" translatable="yes">About</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="always_show_image">True</property>
             <signal name="clicked" handler="open_about_dialog" swapped="no"/>
           </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="quit_btn">
-            <property name="label" translatable="yes">Quit</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <signal name="clicked" handler="quit" swapped="no"/>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-            <property name="position">1</property>
-          </packing>
         </child>
       </object>
     </child>
